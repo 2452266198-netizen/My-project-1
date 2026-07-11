@@ -65,10 +65,25 @@ private readonly int[,] levelData = { ... };
 
 ## 🚀 快速开始
 
-1. 使用 **Unity Hub** 打开项目（需要 Unity 6000.0.78f1 或更高版本）
-2. 打开 `Assets/Scenes/SampleScene.unity`
-3. 点击 **Play** 运行游戏
-4. 使用方向键 / WASD 开始推箱子！
+### 导入到 Unity
+
+1. 克隆仓库到本地：
+   ```bash
+   git clone git@github.com:2452266198-netizen/My-project-1.git
+   git lfs install
+   git lfs pull
+   ```
+2. 打开 **Unity Hub**，点击右上角 **"Add"** 按钮
+3. 选择刚才克隆的 `My-project-1` 文件夹，点击 **"Select Folder"**
+4. Unity Hub 会自动识别项目，点击项目名称打开
+   > ⚠️ 确保已安装 **Unity 6000.0.78f1** 或更高版本。版本不匹配时可在 Unity Hub 的 **Installs** 中下载对应版本。
+
+### 运行游戏
+
+1. 在 Project 窗口中打开 `Assets/Scenes/SampleScene.unity`
+2. 点击工具栏 **▶ Play** 按钮
+3. 使用方向键 / WASD 开始推箱子！
+4. 按 **R 键**可随时重置关卡
 
 ## 🤝 协作开发
 
