@@ -76,7 +76,25 @@ private readonly int[,] levelData = { ... };
 2. 打开 **Unity Hub**，点击右上角 **"Add"** 按钮
 3. 选择刚才克隆的 `My-project-1` 文件夹，点击 **"Select Folder"**
 4. Unity Hub 会自动识别项目，点击项目名称打开
-   > ⚠️ 确保已安装 **Unity 6000.0.78f1** 或更高版本。版本不匹配时可在 Unity Hub 的 **Installs** 中下载对应版本。
+   > ⚠️ 确保已安装 **Unity 6000.0.78f1**。详见下方版本兼容说明。
+
+### 版本兼容
+
+本项目基于 **Unity 6000.0.78f1** 开发。版本不匹配时需要处理：
+
+| 情况 | 表现 | 解决方法 |
+|------|------|----------|
+| 未安装此版本 | Unity Hub 项目列表显示黄色警告三角 | 在 Unity Hub → **Installs** → **Install Editor** → 选择 **6000.0.78f1** 安装 |
+| 安装了更高的小版本（如 6000.0.80f1） | 打开时提示升级，一般安全 | 点击 **"Continue"** 即可，Unity 6.x 小版本间 API 兼容 |
+| 安装了 Unity 5.x 或更早版本 | API 大量变化，大概率报错 | 必须安装 Unity 6（6000.x.x），建议用 Hub 统一版本 |
+| 多人协作版本不一致 | 场景/Prefab 合并冲突 | 团队统一使用 **6000.0.78f1**，将此版本号写入团队文档 |
+
+**推荐的统一方式：**
+
+1. 打开 **Unity Hub** → 左侧 **Installs**
+2. 点击 **Install Editor** → 找到 **6000.0.78f1** → **Install**
+3. 勾选 **Microsoft Visual Studio**（如果有）以便脚本编辑
+4. 等待安装完成，重新打开项目即可
 
 ### 运行游戏
 
@@ -87,16 +105,8 @@ private readonly int[,] levelData = { ... };
 
 ## 🤝 协作开发
 
-```bash
-# 克隆仓库
-git clone git@github.com:2452266198-netizen/My-project-1.git
-
-# 注意：大文件使用 Git LFS 管理，请确保已安装
-git lfs install
-git lfs pull
-```
-
 **注意事项：**
 - `Library/`、`Logs/`、`UserSettings/` 等 Unity 生成目录已在 `.gitignore` 中排除
-- `.fbx`、`.obj`、`.zip` 等大文件通过 **Git LFS** 管理
-- 首次打开项目需等待 Unity 重新生成 Library 目录
+- `.fbx`、`.obj`、`.zip` 等大文件通过 **Git LFS** 管理，克隆后需执行 `git lfs pull`
+- 首次打开项目需等待 Unity 重新生成 Library 目录（可能需要 5-10 分钟）
+- 团队所有成员务必使用相同版本 **Unity 6000.0.78f1**，避免场景和 Prefab 冲突
