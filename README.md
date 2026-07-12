@@ -2,6 +2,10 @@
 
 基于 Unity 6 开发的 3D 推箱子游戏，采用事件驱动架构，支持键盘与串口双模式控制。
 
+### 🎬 演示视频
+
+<video src="https://raw.githubusercontent.com/2452266198-netizen/My-project-1/main/demo.mp4" controls width="100%"></video>
+
 ---
 
 ## 🎯 游戏玩法
