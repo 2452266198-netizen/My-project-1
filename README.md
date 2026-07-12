@@ -67,12 +67,25 @@ private readonly int[,] levelData = { ... };
 
 ### 导入到 Unity
 
-1. 克隆仓库到本地：
+1. 克隆仓库到本地（**必须用 Git LFS 克隆，否则模型文件无法显示**）：
    ```bash
-   git clone git@github.com:2452266198-netizen/My-project-1.git
-   git lfs install
-   git lfs pull
+   git lfs clone git@github.com:2452266198-netizen/My-project-1.git
    ```
+   > ⚠️ **不要用普通 `git clone`**，否则 `.obj` 和 `.fbx` 模型文件只有几 KB 的指针，Unity 中看不到模型。
+
+   **如果你已经用普通 `git clone` 拉下来了，执行以下修复：**
+   ```bash
+   git lfs install
+   git lfs fetch --all
+   git lfs checkout
+   ```
+
+   **验证是否修复成功：** 检查模型文件大小，正常应该 > 100 MB：
+   ```bash
+   ls -lh Assets/Prefabs/*.obj
+   # 正常输出: 100M ...（而不是 134 字节）
+   ```
+
 2. 打开 **Unity Hub**，点击右上角 **"Add"** 按钮
 3. 选择刚才克隆的 `My-project-1` 文件夹，点击 **"Select Folder"**
 4. Unity Hub 会自动识别项目，点击项目名称打开
